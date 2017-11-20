@@ -12,8 +12,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
-                sh 'mvn verify -Pintegrationtest'
+                bat 'mvn test'
+                bat 'mvn verify -Pintegrationtest'
             }
         }
         stage('Deploy') {
