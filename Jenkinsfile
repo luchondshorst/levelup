@@ -16,6 +16,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
+        }
+        stage('Validate') {
             when {
               expression {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS'
