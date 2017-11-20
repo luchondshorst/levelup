@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'M3'
+        jdk 'jdk1.8.0'
+    }
     stages {
         stage('Build') {
             steps {
@@ -9,7 +12,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh 'mvn test'
+                sh 'mvn verify -Pintegrationtest'
             }
         }
         stage('Deploy') {
