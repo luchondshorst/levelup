@@ -28,7 +28,7 @@ pipeline {
     }
     post {
         failure {
-            mail to: team@example.com, subject: 'The Pipeline failed :('
+            echo 'Build gaat fout'
         }
     }
 }
